@@ -13,13 +13,13 @@ class Posts extends Component {
     // store the posts in state
     this.setState({ posts: response.data })
   }
-  render () {
+  render() {
     return (
       <div>
         <h2>Posts</h2>
         {this.state.posts.map(post => (
-          <p>
-             <Link to={`/posts/${post._id}`}>{post.title}</Link>
+          <p key={post._id}>
+            <Link to={`/posts/${post._id}`}>{post.title}</Link>
           </p>
         ))}
       </div>
